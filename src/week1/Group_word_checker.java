@@ -27,7 +27,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Groujp_word_checker {
+public class Group_word_checker {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     public static void main(String[] args) throws IOException {
 
@@ -38,19 +38,20 @@ public class Groujp_word_checker {
 
         //알파벳은 소문자, 중복X지 않으면 단어 기이는 최대 100
 
-        for (int j = 0; j < 6; j++) {
+
             System.out.println("N을 입력하세요.");
             int count = 0;
 
             //단어 수 스캔
             int n = Integer.parseInt(br.readLine());
 
-            if (n < 1 || n > 100) {
-                do {
-                    System.out.println("단어수는 100보다 작거나 같은 자연수 입니다.");
-                    n = Integer.parseInt(br.readLine());
-                } while ( n > 0 && n <= 100);
-            }
+            //필요없음
+//            if (n < 1 || n > 100) {
+//                do {
+//                    System.out.println("단어수는 100보다 작거나 같은 자연수 입니다.");
+//                    n = Integer.parseInt(br.readLine());
+//                } while ( n > 0 && n <= 100);
+//            }
 
 
             for (int i = 0; i < n; i++) {
@@ -60,11 +61,16 @@ public class Groujp_word_checker {
             }
 
             System.out.println(count);
-        }
 
 
     }
 
+
+    /**
+     * 단어 체크
+     * @return boolean (그룹단어일 경우 true, 아니면 flase 리턴)
+     * @throws IOException IOException
+     */
     public static boolean check() throws IOException {
         //알파벳 수 만큼(a~z까지, a)
         boolean[] check = new boolean[26];
