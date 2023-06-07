@@ -1,4 +1,4 @@
-package week1;
+package baekjoon.week1;
 
 /**
  * 백준 - 그룹 단어 체커 (https://www.acmicpc.net/problem/1316)
