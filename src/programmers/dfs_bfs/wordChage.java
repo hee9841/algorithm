@@ -30,7 +30,6 @@ public class wordChage {
 
     }
 
-
 }
 
 class Solution {
