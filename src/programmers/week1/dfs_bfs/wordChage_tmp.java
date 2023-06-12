@@ -1,7 +1,7 @@
-package programmers.dfs_bfs;
+package programmers.week1.dfs_bfs;
 
 /**
- * packageName    : programmers.dfs_bfs
+ * packageName    : programmers.week1.dfs_bfs
  * fileName       : wordChage
  * author         : asdfz
  * date           : 2023-06-07
