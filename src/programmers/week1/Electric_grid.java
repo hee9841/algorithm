@@ -17,6 +17,27 @@ import java.util.Queue;
 public class Electric_grid {
     public static void main(String[] args) {
 
+        Solution1 test1 = new Solution1();
+        int solution1 = test1.solution(9, new int[][]{{1, 3}, {2, 3}, {3, 4}, {4, 5}, {4, 6}, {4, 7}, {7, 8}, {7, 9}});
+
+        System.out.println("solution1 = " + solution1);
+
+        Solution1 test2 = new Solution1();
+        int solution2 = test2.solution(4, new int[][]{{1,2}, {2, 3}, {3, 4}});
+
+        System.out.println("solution2 = " + solution2);
+
+
+        Solution1 test3 = new Solution1();
+        int solution3 = test3.solution(7, new int[][]{{1,2}, {2,7},{3,7},{3,4},{4,5},{6,7}});
+
+        System.out.println("solution3 = " + solution3);
+
+
+
+
+
+
     }
 
 
