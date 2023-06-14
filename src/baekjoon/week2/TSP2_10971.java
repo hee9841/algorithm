@@ -74,7 +74,7 @@ public class TSP2_10971 {
                 //현재 노드에서 갈 수 있는 노드 확인
                 visited[i] = true;
                 dfs(start, i, sum + W[now][i], cnt + 1);
-                visited[i] = false; //백트레킹
+                visited[i] = false;
             }
         }
     }
