@@ -27,8 +27,10 @@ public class VowelDictionary {
     public static int solution(String word) {
         String vowel = "AEIOU";
         //index 별 곱해지는 인자
+        //자리에 따른 인텍스
         int[] a = new int[]{781, 156, 31, 6, 1};
         int answer = word.length();
+
         for (int i = 0; i < word.length(); i++) {
             int idx = vowel.indexOf(word.charAt(i));
             answer += a[i] * idx;
