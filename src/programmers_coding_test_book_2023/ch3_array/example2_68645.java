@@ -1,4 +1,4 @@
-package main.programmers_coding_test_book_2023.ch3_array;
+package programmers_coding_test_book_2023.ch3_array;
 
 /**
  * packageName    : main.book.ch3_array
