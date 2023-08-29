@@ -39,6 +39,11 @@
     //정렬
     Arrays.sort(arr);   //오름차순
     Arrays.sort(arr, Collections.reverseOrder());   //내림차순
+    
+    //배열 -> 문자열
+    String[] arr = {"Apple", "Banana", "Carrots"};
+    String str= Arrays.toString(arr);
+    System.out.println(str);    // [Apple, Banana, Carrots]  출력
 ```
 
 ***
