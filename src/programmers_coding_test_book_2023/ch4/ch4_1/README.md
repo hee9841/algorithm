@@ -69,12 +69,12 @@
   - 문자를 이어 붙을이거나 뺄 때 내부 배열에서 직접 수정
   - 이 때 기대 시간 복잡도는 $$O(1)$$
 ### StrinBuilder 에서 자주 사용하는 메서드
-| 메서드                          | 역활                  | 시간복잡도    |
-|:-----------------------------|:--------------------|----------|
-| StringBuilder.toString()     | 문자열을 String 형식으로 반환 | &&O(N)&& |
-| StringBuilder.append(char c) | 문자 c를 문자열 끝에 이어 붙임  | &&O(1)&& |
-| StringBuilder.length()       | 문자열의 길이 반환          | &&O(1)&& |
-| StringBuilder.reverse()      | 문자열 뒤집는다.           | &&O(1)&& |
+| 메서드                          | 역활                  | 시간복잡도     |
+|:-----------------------------|:--------------------|-----------|
+| StringBuilder.toString()     | 문자열을 String 형식으로 반환 | $$O(N)$$ |
+| StringBuilder.append(char c) | 문자 c를 문자열 끝에 이어 붙임  | $$O(1)$$  |
+| StringBuilder.length()       | 문자열의 길이 반환          | $$O(1)$$  |
+| StringBuilder.reverse()      | 문자열 뒤집는다.           | $$O(1)$$  |
 ### 'a'부터 'z'까지 이어붙이는 예제
 ```java
     StringBuilder azBuilder = new StringBuilder();
