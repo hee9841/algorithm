@@ -1,0 +1,10 @@
+"#E5DECD","#DAD0B4","#D9D3D1","#C1B3AF","#AFA29F","#D2DCE0","#AEC2CA","#90A7B2","#CEC8D2","#ABA1B5","#FFF5EB","#F5DFCF","#F8DDDC","#FFCDCD","#F3CECD","#FFEDC9","#FFE0D1","#EED2E1","#F4C8DF","#FFA7BC","#DDE7CF","#C8E6D2","#C7D8EB","#D7CEE4","#DED6D4
+
+#E5DECD,#DAD0B4,#D9D3D1,#C1B3AF,#AFA29F,#D2DCE0,#AEC2CA,#90A7B2,#CEC8D2,#ABA1B5,#FFF5EB,#F5DFCF,#F8DDDC,#FFCDCD,#F3CECD,#FFEDC9,#FFE0D1,#EED2E1,#F4C8DF,#FFA7BC,#DDE7CF,#C8E6D2,#C7D8EB,#D7CEE4,#DED6D4";
+
+
+style("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", join([at([], (mod(toNumber(replaceAll(timestamp(prop("Created Time")), "[^0-9]", "")) 9) +1)) , "background"], "_"))
+
+join([at(["gray", "brown", "orange", "yellow", "green", "blue", "purple", "pink", "red"], (mod(multiply(toNumber(replaceAll(id(), "[^0-9]", "")), timestamp(now())), 9) +1)), "background"], "_"))
+
+at(["#E5DECD","#DAD0B4","#D9D3D1","#C1B3AF","#AFA29F","#D2DCE0","#AEC2CA","#90A7B2","#CEC8D2","#ABA1B5","#FFF5EB","#F5DFCF","#F8DDDC","#FFCDCD","#F3CECD","#FFEDC9","#FFE0D1","#EED2E1","#F4C8DF","#FFA7BC","#DDE7CF","#C8E6D2","#C7D8EB","#D7CEE4","#DED6D4"], (mod(multiply(toNumber(replaceAll(id(), "[^0-9]", "")), timestamp(now())), 25) +1))
