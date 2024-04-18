@@ -121,7 +121,7 @@ private static class Person {
 
     public Person(String name) {
             this.name = name;
-            numbers new ArrayList<>();
+            numbers = new ArrayList<>();
     }
 
     //1. 전화번호 추가 메서드
