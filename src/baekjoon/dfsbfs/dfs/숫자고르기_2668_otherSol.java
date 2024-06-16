@@ -12,20 +12,21 @@ import java.util.Collections;
 public class 숫자고르기_2668_otherSol {
 
     private static boolean[] visited;
+    private static boolean[] done;
     private static int[] map;
 
     private static ArrayList<Integer> list;
 
-    public static void dfs(int start, int target) {
-        int next = map[start];
-        if (!visited[next]) {
-            visited[next] = true;
-            dfs(next, target);
-            visited[next] = false;
+    public static void dfs(int start) {
+        if(done[start]) return;
+        if (visited[start]) {
+            done[start] = true;
+            list.add(map[start]);
         }
-        if (map[start] == target) {
-            list.add(target);
-        }
+        visited[start] = true;
+        dfs(map[start]);
+        done[start] = true;
+        visited[start] = false;
     }
 
     public static void main(String[] args) throws IOException {
@@ -35,6 +36,7 @@ public class 숫자고르기_2668_otherSol {
 
         map = new int[N + 2];
         visited = new boolean[N + 2];
+        done = new boolean[N + 2];
 
         for (int i = 1; i < N + 1; i++) {
             map[i] = Integer.parseInt(br.readLine());
@@ -42,9 +44,8 @@ public class 숫자고르기_2668_otherSol {
 
         list = new ArrayList<>();
         for (int i = 1; i < N + 1; i++) {
-            visited[i] = true;
-            dfs(i, i);
-            visited[i] = false;
+            if (done[i]) continue;
+            dfs(i);
         }
 
         Collections.sort(list);

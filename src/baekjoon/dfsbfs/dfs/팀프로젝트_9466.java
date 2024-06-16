@@ -23,7 +23,6 @@ public class 팀프로젝트_9466 {
             sum++;
         }
         visited[start] = true;
-        int next = map[start];
         dfs(map[start]);
         done[start] = true; //싸이클에 들어가지 않은 애들도 검사완료했으니까
         visited[start] = false; //방문체크 한거 초기화
