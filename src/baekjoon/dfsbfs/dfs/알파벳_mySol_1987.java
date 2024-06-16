@@ -3,7 +3,7 @@ package baekjoon.dfsbfs.dfs;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Stack;
+import java.util.HashSet;
 import java.util.StringTokenizer;
 
 /**
@@ -19,7 +19,7 @@ public class 알파벳_mySol_1987 {
     private static final int[] diyX = new int[]{0, 0, 1, -1};
 
     private static int count = 0;
-    private static Stack<Character> stack;
+    private static HashSet<Character> stack;
 
     private static void dfs(int y, int x) {
 
@@ -32,7 +32,7 @@ public class 알파벳_mySol_1987 {
                 stack.add(map[toY][toX]);
                 dfs(toY, toX);
                 count = Math.max(count, stack.size());
-                stack.pop();
+                stack.remove(map[toY][toX]);
                 visited[toY][toX] = false;
             }
         }
@@ -51,15 +51,15 @@ public class 알파벳_mySol_1987 {
         for (int i = 1; i < R + 1; i++) {
             String str = br.readLine();
             for (int j = 1; j < C + 1; j++) {
-                map[i][j] = str.charAt(j-1);
+                map[i][j] = str.charAt(j - 1);
             }
         }
 
-        stack = new Stack<>();
+        stack = new HashSet<>();
         visited[1][1] = true;
         stack.add(map[1][1]);
         count = 1;
-        dfs(1,1);
+        dfs(1, 1);
         System.out.println(count);
 
     }
