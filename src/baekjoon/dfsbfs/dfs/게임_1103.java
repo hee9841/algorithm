@@ -12,6 +12,7 @@ import java.util.StringTokenizer;
  */
 public class 게임_1103 {
     private static int[][] map;
+    private static int[][] dp;
     private static boolean[][] visited;
     private static boolean[][] done;
     private static int N,M;
@@ -43,9 +44,12 @@ public class 게임_1103 {
             if (ny < 0 || ny >= N || nx < 0 || nx >= M) {
                 max = Math.max(cnt + 1, max);
             } else {
-                visited[y][x] = true;
-                dfs(ny, nx, cnt+1);
-                visited[y][x] = false;
+                if (dp[ny][nx] < cnt + 1) {
+                    visited[y][x] = true;
+                    dp[ny][nx] = cnt+1;
+                    dfs(ny, nx, cnt+1);
+                    visited[y][x] = false;
+                }
             }
         }
     }
@@ -60,6 +64,7 @@ public class 게임_1103 {
         map = new int[N][M];
         visited = new boolean[N][M];
         done = new boolean[N][M];
+        dp = new int[N][M];
 
         for (int i = 0; i < N; i++) {
             String str = br.readLine();
