@@ -1,88 +1,56 @@
 package baekjoon.구현;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashSet;
+import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
+
 /**
  * https://www.acmicpc.net/problem/11723
  */
 public class 집합_11723 {
 
-    private static HashSet<Integer> S = new HashSet<>();
-
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
+
         int testCase = Integer.parseInt(br.readLine());
 
+        int S = 0;
         for (int i = 0; i < testCase; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             String op = st.nextToken();
-            int x = st.hasMoreTokens() ? Integer.parseInt(st.nextToken()) : 0;
-
-            operate(op, x);
-
+            if (op.equals("all")) {
+                S = (1 << 21) - 1;
+                continue;
+            }
+            if (op.equals("empty")) {
+                S = 0;
+                continue;
+            }
+            int k = Integer.parseInt(st.nextToken());
+            switch (op) {
+                case "add":
+                    S |= (1 << k);
+                    break;
+                case "remove":
+                    S &= ~(1 << k);
+                    break;
+                case "check":
+                    sb.append((S & (1 << k)) !=0 ? "1" : "0").append("\n");
+                    break;
+                case "toggle":
+                    S ^= (1 << k);
+                    break;
+            }
         }
-    }
-
-    private static void operate(String op, int x) {
-        switch (op) {
-            case "add":
-                add(x);
-                return;
-            case "remove":
-                remove(x);
-                return;
-            case "check":
-                System.out.println(check(x) ? "1" : "0");
-                return;
-            case "toggle":
-                toggle(x);
-                return;
-            case "all":
-                all();
-                return;
-            default:
-                //"empty":
-                empty();
-        }
-    }
-
-
-    private static boolean check(int x) {
-        return S.contains(x);
-    }
-
-    private static void add(int x) {
-        if (!check(x)) {
-            S.add(x);
-        }
-    }
-
-    private static void remove(int x) {
-        if (check(x)) {
-            S.remove(x);
-        }
-    }
-
-    private static void toggle(int x) {
-        if (check(x)) {
-            S.remove(x);
-        } else {
-            S.add(x);
-        }
-    }
-
-    private static void all() {
-        for (int i = 1; i < 21; i++) {
-            add(i);
-        }
-    }
-
-    private static void empty() {
-        S = new HashSet<>();
+        bw.write(sb.toString());
+        br.close();
+        bw.close();
     }
 
 }
